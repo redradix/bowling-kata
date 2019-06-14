@@ -1,4 +1,5 @@
-const rollToNumber = roll => {
+const rollToNumber = (roll, prevRoll = 0) => {
+  if (isSpare(roll)) return MAX_SCORE_PER_ROLL - prevRoll
   if (isStrike(roll)) return MAX_SCORE_PER_ROLL
   return Number(roll) || 0
 }
@@ -14,7 +15,8 @@ const calculateScore = input => {
   return rolls.reduce((score, roll, index) => {
     const prevRollScore = rollToNumber(rolls[index - 1])
     const nextRollScore = rollToNumber(rolls[index + 1])
-    const nextTwoRollsScore = rollToNumber(rolls[index + 2]) + nextRollScore
+    const nextTwoRollsScore =
+      rollToNumber(rolls[index + 2], nextRollScore) + nextRollScore
     if (isStrike(roll)) {
       return score + MAX_SCORE_PER_ROLL + nextTwoRollsScore
     }
