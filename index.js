@@ -1,7 +1,7 @@
+const rollToNumber = roll => Number(roll) || 0
+
 const calculateScore = input => {
-  if (input.startsWith('1')) return 1
-  if (input.startsWith('2')) return 2
-  if (input[1] === '1') return 1
-  return 0
+  const score = rollToNumber(input[0]) + rollToNumber(input[1])
+  return score
 }
 module.exports = calculateScore
