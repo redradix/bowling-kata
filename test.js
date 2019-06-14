@@ -11,4 +11,9 @@ describe('calculate score', () => {
     const result = calculateScore(input)
     expect(result).toBe(1)
   })
+  it('2-------------------', () => {
+    const input = '2-------------------'
+    const result = calculateScore(input)
+    expect(result).toBe(2)
+  })
 })
