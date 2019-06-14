@@ -1,4 +1,4 @@
 const calculateScore = input => {
-  return 0
+  return input.startsWith('1') ? 1 : 0
 }
 module.exports = calculateScore
