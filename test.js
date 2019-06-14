@@ -1,34 +1,19 @@
 const calculateScore = require('./index')
 
+const samples = [
+  { input: '--------------------', expected: 0 },
+  { input: '1-------------------', expected: 1 },
+  { input: '2-------------------', expected: 2 },
+  { input: '-1------------------', expected: 1 },
+  { input: '31------------------', expected: 4 },
+  { input: '311-----------------', expected: 5 }
+]
+
 describe('calculate score', () => {
-  it('--------------------', () => {
-    const input = '--------------------'
-    const result = calculateScore(input)
-    expect(result).toBe(0)
-  })
-  it('1-------------------', () => {
-    const input = '1-------------------'
-    const result = calculateScore(input)
-    expect(result).toBe(1)
-  })
-  it('2-------------------', () => {
-    const input = '2-------------------'
-    const result = calculateScore(input)
-    expect(result).toBe(2)
-  })
-  it('-1------------------', () => {
-    const input = '-1------------------'
-    const result = calculateScore(input)
-    expect(result).toBe(1)
-  })
-  it('31------------------', () => {
-    const input = '31------------------'
-    const result = calculateScore(input)
-    expect(result).toBe(4)
-  })
-  it('311-----------------', () => {
-    const input = '311-----------------'
-    const result = calculateScore(input)
-    expect(result).toBe(5)
+  samples.forEach(sample => {
+    it(sample.input, () => {
+      const result = calculateScore(sample.input)
+      expect(result).toBe(sample.expected)
+    })
   })
 })
