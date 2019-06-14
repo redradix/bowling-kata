@@ -9,7 +9,7 @@ const samples = [
   { input: '311-----------------', expected: 5 },
   { input: '311-5---------------', expected: 10 },
   { input: '-/------------------', expected: 10 },
-  { input: '1/------------------', expected: 10 }
+  { input: '1/------------------', expected: 10 },
   { input: '1/1-----------------', expected: 12 }
 ]
 
