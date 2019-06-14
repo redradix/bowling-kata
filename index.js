@@ -1,4 +1,7 @@
-const rollToNumber = roll => Number(roll) || 0
+const rollToNumber = roll => {
+  if (isStrike(roll)) return MAX_SCORE_PER_ROLL
+  return Number(roll) || 0
+}
 const SPARE = '/'
 const STRIKE = 'X'
 const MAX_SCORE_PER_ROLL = 10
