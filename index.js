@@ -7,10 +7,10 @@ const isSpare = roll => roll === SPARE
 const calculateScore = input => {
   const rolls = input.split('')
   return rolls.reduce((score, roll, index) => {
-    const lastRollScore = rollToNumber(rolls[index - 1])
+    const prevRollScore = rollToNumber(rolls[index - 1])
     const nextRollScore = rollToNumber(rolls[index + 1])
     if (isSpare(roll)) {
-      return score + MAX_SCORE_PER_ROLL - lastRollScore + nextRollScore
+      return score + MAX_SCORE_PER_ROLL - prevRollScore + nextRollScore
     }
     return score + rollToNumber(roll)
   }, 0)
