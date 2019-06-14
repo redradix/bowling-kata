@@ -6,7 +6,8 @@ const samples = [
   { input: '2-------------------', expected: 2 },
   { input: '-1------------------', expected: 1 },
   { input: '31------------------', expected: 4 },
-  { input: '311-----------------', expected: 5 }
+  { input: '311-----------------', expected: 5 },
+  { input: '311-5---------------', expected: 10 }
 ]
 
 describe('calculate score', () => {
