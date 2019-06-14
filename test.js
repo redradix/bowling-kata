@@ -12,7 +12,8 @@ const samples = [
   { input: '1/------------------', expected: 10 },
   { input: '1/1-----------------', expected: 12 },
   { input: 'X------------------', expected: 10 },
-  { input: 'X1-----------------', expected: 12 }
+  { input: 'X1-----------------', expected: 12 },
+  { input: 'X11----------------', expected: 14 }
 ]
 
 describe('calculate score', () => {
