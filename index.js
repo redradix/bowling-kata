@@ -1,3 +1,19 @@
+const rollScore = (rolls, index) => {
+  const roll = rolls[index]
+  const prevRoll = rolls[index - 1]
+  const numberScore = Number(roll) 
+
+  if (!isNaN(numberScore)) {
+    return numberScore
+  } else if (roll === 'X') {
+    return 10
+  } else if (roll === '/') {
+    return 10 - (Number(prevRoll) || 0)
+  } else {
+    return 0
+  }
+}
+ 
 const computeRoll = (rolls, i) => {
   switch (rolls[i]) {
     case 'X': return rollScore(rolls, i) + rollScore(rolls, i + 1) + rollScore(rolls, i + 2)
@@ -24,20 +40,3 @@ module.exports = function calculateScore(input) {
 
   return frameScores.reduce((a, b) => a + b, 0)
 }
-
-const rollScore = (rolls, index) => {
-  const roll = rolls[index]
-  const prevRoll = rolls[index - 1]
-  const numberScore = Number(roll) 
-
-  if (!isNaN(numberScore)) {
-    return numberScore
-  } else if (roll === 'X') {
-    return 10
-  } else if (roll === '/') {
-    return 10 - (Number(prevRoll) || 0)
-  } else {
-    return 0
-  }
-}
- 
